@@ -10,11 +10,16 @@ app = Flask(__name__)
 model_path = './similarity_model'
 model = SentenceTransformer(model_path)
 
-@app.route('/similarity', methods=['POST'])
+@app.route('/similarity', methods=['GET', 'POST'])
 def similarity():
-    content = request.get_json()
-    text1 = content['text1']
-    text2 = content['text2']
+    if request.method == 'POST':
+        content = request.get_json()
+        text1 = content['text1']
+        text2 = content['text2']
+    elif request.method == 'GET':
+        text1 = request.args.get('text1')
+        text2 = request.args.get('text2')
+
 
     # Generate embeddings and compute similarity
     with torch.no_grad():
