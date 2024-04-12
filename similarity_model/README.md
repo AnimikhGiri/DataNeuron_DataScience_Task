@@ -8,8 +8,6 @@ tags:
 - transformers
 pipeline_tag: sentence-similarity
 ---
-**⚠️ This model is deprecated. Please don't use it as it produces sentence embeddings of low quality. You can find recommended sentence embedding models here: [SBERT.net - Pretrained Models](https://www.sbert.net/docs/pretrained_models.html)**
-
 # sentence-transformers/bert-base-nli-mean-tokens
 
 This is a [sentence-transformers](https://www.SBERT.net) model: It maps sentences & paragraphs to a 768 dimensional dense vector space and can be used for tasks like clustering or semantic search.
